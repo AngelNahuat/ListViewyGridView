@@ -20,7 +20,8 @@ class AdaptadorCustom(var context: Context, items:ArrayList<Fruta>): BaseAdapter
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var vista = convertView
         var holder: ViewHolder? = null
-//hola
+
+        //
         if(vista == null){
             vista = LayoutInflater.from(context).inflate(R.layout.templategrid, null)
             holder = ViewHolder(vista)

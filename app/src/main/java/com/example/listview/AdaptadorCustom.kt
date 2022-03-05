@@ -21,7 +21,7 @@ class AdaptadorCustom(var context: Context, items:ArrayList<Fruta>): BaseAdapter
         var vista = convertView
         var holder: ViewHolder? = null
 
-        //
+
         if(vista == null){
             vista = LayoutInflater.from(context).inflate(R.layout.templategrid, null)
             holder = ViewHolder(vista)

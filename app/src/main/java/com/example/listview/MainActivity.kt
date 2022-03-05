@@ -2,10 +2,7 @@ package com.example.listview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,21 +10,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        var frutas:ArrayList<String>
-        frutas= ArrayList()
+        var frutas: ArrayList<String>
+        frutas = ArrayList()
         frutas.add("Manzana")
         frutas.add("Sandia")
         frutas.add("Durazno")
         frutas.add("Platano")
 
-        val lista=findViewById<ListView>(R.id.lista)
+        val grid: GridView = findViewById(R.id.grid)
 
-        val adaptador=ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,frutas)
+        val adaptador = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, frutas)
 
-        lista.adapter=adaptador
+        grid.adapter = adaptador
 
-        lista.onItemClickListener=AdapterView.OnItemClickListener{parent,view,position, id->
-            Toast.makeText(this,frutas.get(position),Toast.LENGTH_LONG).show()
+        grid.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            Toast.makeText(this, frutas.get(position), Toast.LENGTH_LONG).show()
         }
 
     }
